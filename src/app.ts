@@ -7,6 +7,7 @@ import Controller from '@/utils/interfaces/controller.interface';
 import ErrorMiddleware from '@/middleware/error.middleware';
 import helmet from 'helmet';
 
+
 class App {
     public exrpess: Application;
     public port: number;
