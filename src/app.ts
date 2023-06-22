@@ -6,7 +6,7 @@ import morgan from 'morgan';
 import Controller from '@/utils/interfaces/controller.interface';
 import ErrorMiddleware from '@/middleware/error.middleware';
 import helmet from 'helmet';
-
+import swaggerDocs from '@/utils/swagger';
 
 class App {
     public exrpess: Application;
@@ -45,7 +45,9 @@ class App {
     }
     public listen(): void {
         this.exrpess.listen(this.port, () => {
-            console.log('listening on port ' + this.port)
+            console.log("I am here");
+            swaggerDocs(this.exrpess, this.port);
+            console.info('Listening on port ' + this.port)
         })
     };
 }
